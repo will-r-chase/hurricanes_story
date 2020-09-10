@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'Triplicate-smcp';
+  src: url('fonts/triplicate_c4_poly_regular.woff') format('woff'),
+    /* Modern Browsers */ url('fonts/Triplicate C4 Poly Regular.ttf')
+      format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Triplicate';
+  src: url('fonts/triplicate_t4_poly_regular.woff') format('woff'),
+    /* Modern Browsers */ url('fonts/Triplicate T4 Poly Regular.ttf')
+      format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Triplicate';
+  src: url('fonts/triplicate_t4_poly_bold.woff') format('woff'),
+    /* Modern Browsers */ url('fonts/Triplicate T4 Poly Bold.ttf')
+      format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Triplicate-text';
+  src: url('fonts/triplicate_t3_poly_regular.woff') format('woff'),
+    /* Modern Browsers */ url('fonts/Triplicate T3 Poly Regular.ttf')
+      format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Triplicate-smcp';
+  src: url('fonts/triplicate_c4_poly_bold.woff') format('woff'),
+    /* Modern Browsers */ url('fonts/Triplicate C4 Poly Bold.ttf')
+      format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Equity-text';
+  src: url('fonts/equity_text_b_regular.woff') format('woff'),
+    /* Modern Browsers */ url('fonts/Equity Text B Regular.ttf')
+      format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Concourse';
+  src: url('fonts/concourse_c4_tab_regular.woff') format('woff'),
+    /* Modern Browsers */ url('fonts/Concourse C4 Tab Regular.ttf')
+      format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Concourse-text';
+  src: url('fonts/concourse_t3_tab_regular.woff') format('woff'),
+    /* Modern Browsers */ url('fonts/Concourse T3 Tab Regular.ttf')
+      format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Advocate C63';
+  src: url('fonts/advocate_c63_regular.woff') format('woff'),
+    /* Modern Browsers */ url('fonts/Advocate C63 Regular.ttf')
+      format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Advocate C45';
+  src: url('fonts/advocate_c45_regular.woff') format('woff'),
+    /* Modern Browsers */ url('fonts/Advocate C45 Regular.ttf')
+      format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}

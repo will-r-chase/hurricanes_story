@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="v2.css" />
+    <link rel="stylesheet" href="fonts.css" />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <script src="bodyScrollLock.js"></script>
+  </head>
+
+  <body>
+    <div id="hero">
+      <div class="intro-text">
+        <h1>the retired</h1>
+        <h2>a visual history of the atlantic’s worst hurricanes</h2>
+      </div>
+    </div>
+    <h3>What’s in a name?</h3>
+    <p>
+      In 1954, three devastating hurricanes struck the United States. Hurricane
+      names typically repeat, but the following year those hurricane
+      names—Carol, Edna, and Hazel—were retired, not to be used again out of
+      respect for the victims. The practice of naming hurricanes after people
+      had only been formally adopted in 1950. Prior to that, hurricanes were
+      often named after places or the name of the Saint’s Day on which the
+      hurricane occurred. Beginning in 1944, meteorologists from the US armed
+      forces began informally naming hurricanes after their wives and
+      girlfriends, finding that the colloquial names improved recall and helped
+      avoid confusion between multiple storms. In 1945 they publicly adopted a
+      list of women’s names to be used for naming Pacific hurricanes, and
+      requested that the US Weather Bureau do the same for Atlantic storms. But
+      the Weather Bureau resisted, insisting that to be taken seriously, they
+      should refer to hurricanes using technical jargon rather than names. But
+      1950 saw three Atlantic tropical storms simultaneously, which led to
+      confusion and spurred Grady Norton (then chief forecaster at what would
+      become the National Hurricane Center) to begin using names publicly. After
+      that, the cat was out of the bag, and by 1952 the Weather Bureau
+      officially adopted a list of women’s names for Atlantic hurricanes that
+      would be reused each year. After the practice of retiring hurricanes began
+      in 1955, about one name was retired each year and replaced with a new one,
+      though some years saw no retirements, and some saw several.
+    </p>
+    <p>
+      At the time, there was some grumbling about the use of women’s names (both
+      from those that found it offensive to women and those that thought it made
+      hurricanes seem frivolous), but the new practice was generally well
+      received from the public. In 1969 the National Organization of Women
+      called on the National Hurricane Center to discontinue using solely
+      women’s names for hurricanes, but the motion went largely ignored. It
+      wasn’t until 1978 that Secretary of Commerce Juanita Kreps (the first
+      female Secretary of Commerce) ordered NOAA to cease using exclusively
+      female names for hurricanes. Following the directive, NOAA convened a
+      meeting and amended the hurricane name lists to include names from both
+      sexes.
+    </p>
+    <p>
+      In the years from 1950 to 1978, hurricane naming evolved significantly.
+      There were many inconsistencies early on, such as names being removed from
+      circulation, but not “retired” due to severity, merely removed with no
+      justification given. Eventually multiple lists were introduced, so that
+      names would repeat every two, or four, or five years, until 1978, when our
+      modern system was introduced. Since 1978, we have used six lists of
+      hurricane names, based on names of both sexes, and including names of
+      French and Spanish origin, since these hurricanes affect regions where
+      these languages are native. The name lists are cycled, so that names
+      repeat every six years, except when a name is retired due to severe damage
+      or a large number of casualties.
+    </p>
+    <img
+      class="desc-img"
+      src="static/hurricane_names_list.png"
+      alt="The last six years of hurricane names"
+    />
+    <p>
+      These retired hurricanes represent the most severe storms the Atlantic has
+      experienced over the last 70 years. The most costly storm to date was
+      hurricane Katrina (2005), which caused more than $160 billion dollars in
+      damage (adjusted for inflation), mostly due to flooding. Hurricane Mitch
+      (1998) was by far the most deadly, with 11,000 casualties. Below you can
+      explore and compare the history and resulting damage of all retired
+      hurricanes.
+    </p>
+
+    <div id="wrapper-outer">
+      <div id="wrapper-inner">
+        <svg id="svg"></svg>
+      </div>
+      <button class="zoom-button">ZOOM</button>
+      <div id="legend-modal" class="modal-window">
+        <a href="#close" title="Close" class="modal-close"></a>
+        <img
+          class="legend-img"
+          src="static/legend_story_v2.png"
+          alt="radial visualization legend"
+        />
+      </div>
+      <a href="#legend-modal" id="legend-link">how to read it</a>
+      <button class="mobile-buttons left-button">
+        <svg
+          width="20"
+          height="43"
+          viewBox="0 0 20 43"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="button-svg"
+        >
+          <path
+            d="M19.6508 40.4709C20.1825 41.1062 20.0985 42.0523 19.4631 42.5839C18.8278 43.1156 17.8818 43.0316 17.3501 42.3963L19.6508 40.4709ZM2.00016 21.7164L0.849822 22.679L0.0442208 21.7164L0.849822 20.7537L2.00016 21.7164ZM17.3501 1.03647C17.8818 0.401154 18.8278 0.317127 19.4632 0.848789C20.0985 1.38045 20.1825 2.32647 19.6508 2.96179L17.3501 1.03647ZM17.3501 42.3963L0.849822 22.679L3.1505 20.7537L19.6508 40.4709L17.3501 42.3963ZM0.849822 20.7537L17.3501 1.03647L19.6508 2.96179L3.1505 22.679L0.849822 20.7537Z"
+            fill="#282727"
+          />
+        </svg>
+      </button>
+      <button class="mobile-buttons right-button">
+        <svg
+          width="21"
+          height="43"
+          viewBox="0 0 21 43"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="button-svg"
+        >
+          <path
+            d="M0.849659 40.4709C0.317996 41.1062 0.402024 42.0523 1.03734 42.5839C1.67266 43.1156 2.61868 43.0316 3.15034 42.3963L0.849659 40.4709ZM18.5003 21.7164L19.6507 22.679L20.4563 21.7164L19.6507 20.7537L18.5003 21.7164ZM3.15034 1.03647C2.61868 0.401154 1.67265 0.317127 1.03734 0.848789C0.402022 1.38045 0.317994 2.32647 0.849657 2.96179L3.15034 1.03647ZM3.15034 42.3963L19.6507 22.679L17.35 20.7537L0.849659 40.4709L3.15034 42.3963ZM19.6507 20.7537L3.15034 1.03647L0.849657 2.96179L17.35 22.679L19.6507 20.7537Z"
+            fill="#282727"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <hr />
+    <h3>The characteristics of a retired hurricane</h3>
+    <p>
+      The characteristics of a retired hurricane are varied. Some are retired
+      for the huge damage they cause, others for their number of casualties, and
+      those rare few that are pure death and destruction, causing both massive
+      damage and many deaths.
+    </p>
+    <img
+      class="desc-img"
+      src="static/quadrants_plot_final.png"
+      alt="A scatter plot of hurricane damage versus deaths"
+    />
+    <p>
+      There are many factors that predict these types of hurricanes. An obvious
+      one is wind speed. Indeed many retired hurricanes reach high wind speeds,
+      and the average wind speed of retired hurricanes is greater than normal
+      hurricanes. However, there are several examples of retired hurricanes that
+      are only category 1 or 2, or never even make it beyond the designation of
+      Tropical Storm.
+    </p>
+    <img
+      class="full-img"
+      src="static/wind_speed_final.png"
+      alt="Plots of hurricane damage and deaths versus wind speed"
+    />
+    <p>
+      Another major factor predicting hurricane damage and death is the location
+      of landfall. Several of the most damaging hurricanes—such as Katrina,
+      Harvey, and Sandy—hit major metro areas (New Orleans, Houston, New York
+      City). And several of the most deadly hurricanes—Mitch, Maria, Fifi—hit
+      areas with less developed infrastructure for weathering and recovering
+      from a major hurricane. Of course, the handling of hurricane recovery has
+      a major impact on how many deaths result. Hurricane Katrina and Maria are
+      notable for their botched responses from the Bush and Trump
+      administrations respectively.
+    </p>
+    <!-- <img class="desc-img" src="tracks_50s.gif" /> -->
+    <hr />
+    <h3>Methods</h3>
+    <p>
+      Information on retired hurricanes, such as deaths, damage, wind speed,
+      etc. was recorded by hand and collected from Wikipedia and news reports.
+      All data on damage cost was corrected for inflation. No data was found on
+      damage for hurricane Anita, so an estimate was made based on a similar
+      storm (hurricane Janet). Data on hurricane severity in each region was
+      recorded by hand using NOAA’s hurricane database. In several cases, these
+      severity designations involved subjective judgements, such as whether a
+      hurricane made landfall when it was off the coast of an area, or what
+      category a hurricane was when its wind speed changed rapidly upon
+      landfall. Geographic data on hurricane tracks was gathered from the
+      IBTRACS dataset.
+    </p>
+
+    <script src="v2.js"></script>
+  </body>
+</html>
