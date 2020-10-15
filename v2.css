@@ -434,6 +434,7 @@ img {
   max-height: 100%;
 }
 img.desc-img {
+  box-sizing: border-box;
   display: block;
   max-width: 1000px;
   margin-top: 2rem;
@@ -448,6 +449,14 @@ img.full-img {
   margin-bottom: 3rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media all and (max-width: 1000px) {
+  img.desc-img {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 hr {
