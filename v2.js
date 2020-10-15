@@ -587,6 +587,9 @@ d3.csv('data/retired_hurricanes.csv', d3.autoType)
         document.querySelector('#wrapper-outer').removeAttribute('style');
         d3.select('#scrollIndicator').attr('visibility', 'hidden');
 
+        //change text on zoom button
+        document.querySelector('.zoom-button').innerHTML = 'ZOOM';
+
         if (mobile) {
           //mobile when zoomed
           wrapperInner.style('width', '100%').style('padding-bottom', '100%');
@@ -664,6 +667,10 @@ d3.csv('data/retired_hurricanes.csv', d3.autoType)
 
         //disable scrolling on body
         bodyScrollLock.disableBodyScroll(legendLink);
+        console.log(zoomButton);
+
+        //change text on zoom button
+        document.querySelector('.zoom-button').innerHTML = 'CLOSE';
 
         if (mobile) {
           //mobile when not zoomed
